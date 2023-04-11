@@ -1,7 +1,7 @@
 import random
 
-correct_answers = 0
-question_summary = []
+correct = 0
+question = []
 
 for i in range(1, 11):
     num_1 = random.randint(1, 10)
@@ -9,13 +9,13 @@ for i in range(1, 11):
     answer = num_1 * num_2
     user_answer = int(input(f"Q{i}: {num_1} x {num_2} = "))
     if user_answer == answer:
-        question_summary.append(f"Q{i}: {num_1} x {num_2} = {user_answer} (Correct)")
-        correct_answers += 1
+        question.append(f"Q{i}: {num_1} x {num_2} = {user_answer} (Correct)")
+        correct += 1
     else:
-        question_summary.append(f"Q{i}: {num_1} x {num_2} = {user_answer} (Incorrect)")
+        question.append(f"Q{i}: {num_1} x {num_2} = {user_answer} (Incorrect)")
 
 print("\n10 Question Summary:\n")
-for question in question_summary:
-    print(question)
+for questions in question:
+    print(questions)
 
-print(f"\nYou answered {correct_answers} out of 10 questions correctly.")
+print(f"\nYou answered {correct} out of 10 questions correctly.")
